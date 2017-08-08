@@ -6,7 +6,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY . /usr/src/app
 
-RUN apk --no-cache add autoconf g++ && \
+RUN apk --no-cache add autoconf g++ ca-certificates && \
     pip install --no-cache-dir -r requirements.txt && \
     apk del g++ autoconf && \
     rm .git -rf
